@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
+import { Card, Button, Container, Row, Col, Navbar } from 'react-bootstrap';
+import MotionItem from "./components/motionItem"
+import ParticlesBackground from "./components/ParticlesBackground"
+import Logo from "./images/logo.png"
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ParticlesBackground>
+      {/* Navbar */}
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">
+            <img
+              alt=""
+              src={Logo}
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            React Bootstrap
+          </Navbar.Brand>
+        </Container>
+      </Navbar>
+
+
+      <Container fluid>
+        <Row>
+          <Col></Col>
+          <Col>
+            <MotionItem />
+          </Col>
+          <Col></Col>
+
+        </Row>
+      </Container>
+      </ParticlesBackground>
     </div>
   );
 }
