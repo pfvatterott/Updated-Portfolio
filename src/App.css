@@ -1,10 +1,26 @@
 .vertical-align {
-  position: absolute !important; /* or absolute */
-  top: 50% !important;
-  left: 50% !important;
+  position: absolute; /* or absolute */
+  top: 50%;
+  right: 50%;
+  bottom: 50%;
+
 }
 
 .dragItem {
   height: 100px;
   opacity: 1;
+}
+
+.AboutMeAlign {
+  position: absolute; /* or absolute */
+  top: 40%;
+  right: 50%;
+  bottom: 60%;
+}
+
+.ContactAlign {
+  position: absolute; /* or absolute */
+  top: 70%;
+  right: 50%;
+  bottom: 30%;
 }
