@@ -1,0 +1,5 @@
+.vertical-align {
+  position: absolute !important; /* or absolute */
+  top: 50% !important;
+  left: 50% !important;
+}

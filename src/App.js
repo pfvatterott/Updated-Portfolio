@@ -27,10 +27,10 @@ function App() {
 
 
       <Container fluid>
-        <Row>
+        <Row className="vertical-align">
           <Col></Col>
           <Col>
-            <MotionItem />
+            <MotionItem/>
           </Col>
           <Col></Col>
 
