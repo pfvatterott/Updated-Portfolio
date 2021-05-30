@@ -14,7 +14,7 @@ export default function AboutMe(props) {
   
     function processDragInfo(x, y) {
         console.log(x, y, startingDragPoint)
-        if ((startingDragPoint.x * 1.8) < x) {
+        if ((startingDragPoint.y * 1.8) < y) {
             console.log('working')
             props.setAboutMeVisible(false)
             props.setMainVisible(true)
@@ -73,10 +73,6 @@ export default function AboutMe(props) {
                         </a>
                     </span>
                 </Col>
-            </Row>
-            <br></br><br></br><br></br>
-            <Row>
-                <Col></Col>
                 <Col>
                     <motion.div>
                         <motion.div
@@ -91,14 +87,13 @@ export default function AboutMe(props) {
                             }
                         >
                             <img className="dragItem" draggable="false" src="./images/clipart1869989.png"></img>
-                        {/* </motion.div> */}
                          </motion.div>
+                         <br></br><br></br><br></br><br></br><br></br><br></br>
+                         <h3>Back To Main</h3>
                     </motion.div>
                 </Col>
-                <Col>
-                    <h3>Back To Main</h3>
-                </Col>
             </Row>
+          
         </Container>
     )
 }

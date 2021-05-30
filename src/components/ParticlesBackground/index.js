@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Particles from "react-tsparticles";
+import "./style.css"
 
 export default function ParticlesBackground(props) {
     const [particleColor, setParticleColor] = useState("#ff0000")
