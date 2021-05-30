@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import './App.css';
-import { Card, Button, Container, Row, Col, Navbar } from 'react-bootstrap';
+import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import ParticlesBackground from "./components/ParticlesBackground"
 import Logo from "./images/logo.png"
 import {
@@ -27,7 +27,7 @@ function App() {
   }
   return (
     <div className="App">
-      <ParticlesBackground>
+      <ParticlesBackground mainVisible={mainVisible} aboutMeVisible={aboutMeVisible}>
 
         {/* Navbar */}
         <Navbar bg="dark" variant="dark">
@@ -65,7 +65,7 @@ function App() {
                     <motion.div>
                       <motion.div
                         drag
-                        dragConstraints={{ top: -50, left: -50, right: 50, bottom: 50 }}
+                        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
                         style={{ x }}
                         onDragStart={
                           (event, info) => startingDragPoint = { x: info.point.x, y: info.point.y }

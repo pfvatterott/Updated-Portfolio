@@ -1,0 +1,9 @@
+.aboutMeContainer{
+    position: absolute; /* or absolute */
+    top: 40%;
+    left: 20%;
+}
+
+.profilePic {
+    height: 300px;
+}

@@ -1,102 +1,109 @@
-import React, { Component } from 'react'
+import React, {useEffect, useState} from 'react'
 import Particles from "react-tsparticles";
 
+export default function ParticlesBackground(props) {
+    const [particleColor, setParticleColor] = useState("#ff0000")
 
-export default class ParticlesBackground extends Component {
+    useEffect(() => {
+        console.log(props.mainVisible)
+        console.log(props.aboutMeVisible)
 
-    constructor(props) {
-        super(props);
-    
-        this.particlesInit = this.particlesInit.bind(this);
-        this.particlesLoaded = this.particlesLoaded.bind(this);
-      }
-    
-      particlesInit(main) {
-        console.log(main);
-    
-        // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-      }
-    
-      particlesLoaded(container) {
-        console.log(container);
-      }
-    render() {
-        return (
-            <div>
-                <Particles
-                    id="tsparticles"
-                    init={this.particlesInit}
-                    loaded={this.particlesLoaded}
-                    params={{
-                        "background": {
-                        "color": {
-                            "value": "#000000"
-                        }
-                        },
-                        "fullScreen": {
-                        "enable": true,
-                        "zIndex": -1
-                        },
-                        "interactivity": {
-                        "events": {
-                            "onClick": {
-                            "enable": true,
-                            "mode": "push"
-                            },
-                            "onHover": {
-                            "enable": true,
-                            "mode": "repulse"
-                            }
-                        }
-                        },
-                        "particles": {
-                        "color": {
-                            "value": "#ff0000",
-                            "animation": {
-                            "h": {
-                                "enable": true,
-                                "speed": 20
-                            }
-                            }
-                        },
-                        "links": {
-                            "color": {
-                            "value": "#ffffff"
-                            },
-                            "enable": true,
-                            "opacity": 0.4
-                        },
-                        "move": {
-                            "enable": true,
-                            "outModes": {
-                            "bottom": "out",
-                            "left": "out",
-                            "right": "out",
-                            "top": "out"
-                            },
-                            "speed": 6
-                        },
-                        "number": {
-                            "density": {
-                            "enable": true
-                            },
-                            "value": 80
-                        },
-                        "opacity": {
-                            "value": 0.5
-                        },
-                        "size": {
-                            "value": {
-                            "min": 0.1,
-                            "max": 3
-                            }
-                        }
-                        }
-                    }}
-                />
-                {this.props.children}
-            </div>
-        )
-    }
+        if (props.mainVisible === true) {
+            setParticleColor("#ff0000")
+        }
+        else if (props.aboutMeVisible === true) {
+            setParticleColor("#2f00ff")
+        }
+        
+    }, [props.mainVisible, props.aboutMeVisible])
+    return (
+        <div>
+        <Particles
+            id="tsparticles"
+            params={{
+                "background": {
+                "color": {
+                    "value": "white"
+                }
+                },
+                "fullScreen": {
+                "enable": true,
+                "zIndex": -1
+                },
+                "interactivity": {
+                "events": {
+                    "onClick": {
+                    "enable": true,
+                    "mode": "push"
+                    },
+                    "onHover": {
+                    "enable": true,
+                    "mode": "repulse"
+                    }
+                }
+                },
+                "particles": {
+                "color": {
+                    "value": particleColor,
+                    "animation": {
+                    "h": {
+                        "enable": false,
+                        "speed": 20
+                    }
+                    }
+                },
+                "links": {
+                    "color": {
+                    "value": "#ffffff"
+                    },
+                    "enable": true,
+                    "opacity": 0.4
+                },
+                "move": {
+                    "enable": true,
+                    "outModes": {
+                    "bottom": "out",
+                    "left": "out",
+                    "right": "out",
+                    "top": "out"
+                    },
+                    "speed": 6
+                },
+                "number": {
+                    "density": {
+                    "enable": true
+                    },
+                    "value": 80
+                },
+                "opacity": {
+                    "value": 0.5
+                },
+                "size": {
+                    "value": {
+                    "min": 0.1,
+                    "max": 3
+                    }
+                }
+                }
+            }}
+        />
+        {props.children}
+    </div>
+    )
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
