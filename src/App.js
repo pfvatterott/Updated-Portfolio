@@ -13,7 +13,8 @@ function App() {
   const [ mainVisible, setMainVisible ] = useState(true)
   const [ aboutMeVisible, setAboutMeVisible ] = useState(false)
   const [ skillsVisible, setSkillsVisible ] = useState(false)
-  const [ mainTransition, setMainTransition ] = useState(-300)
+  const [ mainTransition, setMainTransition ] = useState({y: -300})
+  const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: 300 })
   const [ mainExitTransition, setMainExitTransition ] = useState({})
 
   function processDragInfo(x, y) {
@@ -23,13 +24,16 @@ function App() {
           setMainExitTransition({y: 1000})
           setAboutMeVisible(true)
           setMainVisible(false)
-          setMainTransition(1000)
+          setMainTransition({y: 1000 })
+          setMainTransitionAnimate({ y: 300 })
 
       }
       else if ((startingDragPoint.x / 2) > x) {
         setMainExitTransition({x: 1000})
+        setMainTransition({x: 1000, y: 300})
         setSkillsVisible(true)
         setMainVisible(false)
+        setMainTransitionAnimate({ x: -100 })
       }
   }
   return (
@@ -58,8 +62,8 @@ function App() {
             {mainVisible && (
               <Container fluid>
                <motion.div
-                  initial={{ y: mainTransition }}
-                  animate={{ y: 300 }}
+                  initial={mainTransition}
+                  animate={mainTransitionAnimate}
                   transition={{ duration: 1 }}
                   exit={mainExitTransition}
                 >
@@ -131,9 +135,9 @@ function App() {
                   initial={{ x: -1000 }}
                   animate={{ x: 300 }}
                   transition={{ duration: 1 }}
-                  exit={{ y: -1000}}
+                  exit={{ x: -1000}}
                 >
-                  <SkillsTools setMainVisible={setMainVisible}/>
+                  <SkillsTools setMainVisible={setMainVisible} setSkillsVisible={setSkillsVisible}/>
                 </motion.div>
               </Container>  
             )}  
