@@ -14,7 +14,6 @@ export default function Icons(props) {
                     <FontAwesomeIcon icon={props.iconName} />
               </Button>
             </a>
-
         </span>
     )
 }

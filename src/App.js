@@ -6,6 +6,7 @@ import Logo from "./images/logo.png"
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion"
 import AboutMe from "./pages/AboutMe"
 import SkillsTools from "./pages/SkillsTools"
+import Projects from "./pages/Projects"
 
 function App() {
   let startingDragPoint = {}
@@ -13,6 +14,7 @@ function App() {
   const [ mainVisible, setMainVisible ] = useState(true)
   const [ aboutMeVisible, setAboutMeVisible ] = useState(false)
   const [ skillsVisible, setSkillsVisible ] = useState(false)
+  const [ projectsVisible, setProjectsVisible ] = useState(false)
   const [ mainTransition, setMainTransition ] = useState({y: -300})
   const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: 300 })
   const [ mainExitTransition, setMainExitTransition ] = useState({})
@@ -34,6 +36,13 @@ function App() {
         setSkillsVisible(true)
         setMainVisible(false)
         setMainTransitionAnimate({ x: -100 })
+      }
+      else if ((startingDragPoint.x * 1.5) < x) {
+        setMainExitTransition({x: -1000})
+        setMainTransition({x: -1000, y: 300})
+        setMainVisible(false)
+        setProjectsVisible(true)
+        setMainTransitionAnimate({ x: 100 })
       }
   }
   return (
@@ -141,7 +150,22 @@ function App() {
                 </motion.div>
               </Container>  
             )}  
-        </AnimatePresence>        
+        </AnimatePresence>  
+
+        <AnimatePresence>
+            {projectsVisible && (
+              <Container fluid>
+                <motion.div
+                  initial={{ x: 1000 }}
+                  animate={{ x: -300 }}
+                  transition={{ duration: 1 }}
+                  exit={{ x: 1000}}
+                >
+                  <Projects setMainVisible={setMainVisible} setProjectsVisible={setProjectsVisible}/>
+                </motion.div>
+              </Container>  
+            )}  
+        </AnimatePresence>          
 
 
 
