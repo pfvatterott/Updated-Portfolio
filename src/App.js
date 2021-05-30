@@ -3,12 +3,7 @@ import './App.css';
 import { Container, Row, Col, Navbar } from 'react-bootstrap';
 import ParticlesBackground from "./components/ParticlesBackground"
 import Logo from "./images/logo.png"
-import {
-  motion,
-  useMotionValue,
-  useTransform,
-  AnimatePresence
-} from "framer-motion"
+import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion"
 import AboutMe from "./pages/AboutMe"
 
 function App() {
@@ -99,7 +94,7 @@ function App() {
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
                 >
-                  <AboutMe />
+                  <AboutMe setAboutMeVisible={setAboutMeVisible} setMainVisible={setMainVisible}/>
                 </motion.div>
               </Container>  
             )}  
