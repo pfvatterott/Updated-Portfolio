@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Container, Button} from 'react-materialize';
 import profilePic from "../../images/profile-picture.jpg"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"

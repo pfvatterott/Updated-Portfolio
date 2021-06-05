@@ -1,24 +1,17 @@
-.resumeScreenshot {
-    height: 400px;
-    transition: transform 0.25s ease;
-  cursor: zoom-in;
+#resume {
+  margin-top: 25px !important;
+  height: 425px;
 }
 
-.resumeScreenshot:active {
-    -webkit-transform: scale(2);
-  transform: scale(2);
-  cursor: zoom-out; 
+.download-button {
+  background-color: #494D52 !important;
+  margin-top: 30px !important;
+  min-width: 200px !important;
+  margin-left: 65px !important;
+  border-radius: 10px !important;
+  float: left !important;
 }
 
-.downloadButton {
-    background-color: #494D52 !important;
-    border-color: #494D52 !important;
-    margin-top: 30px;
-    min-width: 200px;
-    margin-left: 65px;
-    border-radius: 10px;
-}
-
-.downloadButton:hover {
-    background-color: #2E3639 !important;
+.download-button:hover {
+  background-color: #2E3639 !important;
 }

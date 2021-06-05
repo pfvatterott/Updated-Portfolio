@@ -1,23 +1,28 @@
 import React, {useState} from 'react'
 import './App.css';
-import { Container, Row, Col, Navbar } from 'react-bootstrap';
+import { Row, Col, Container, Section} from 'react-materialize';
 import ParticlesBackground from "./components/ParticlesBackground"
 import Logo from "./images/logo.png"
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion"
 import AboutMe from "./pages/AboutMe"
 import SkillsTools from "./pages/SkillsTools"
 import Projects from "./pages/Projects"
+import 'materialize-css';
 
 function App() {
+  var w = window.innerWidth;
+  var h = window.innerHeight;
   let startingDragPoint = {}
   const x = useMotionValue(0)
   const [ mainVisible, setMainVisible ] = useState(true)
   const [ aboutMeVisible, setAboutMeVisible ] = useState(false)
   const [ skillsVisible, setSkillsVisible ] = useState(false)
   const [ projectsVisible, setProjectsVisible ] = useState(false)
-  const [ mainTransition, setMainTransition ] = useState({y: -300})
-  const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: 300 })
+  const [ mainTransition, setMainTransition ] = useState({y: -100, x: 0})
+  const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: h/4})
   const [ mainExitTransition, setMainExitTransition ] = useState({})
+  
+  console.log(h)
 
   function processDragInfo(x, y) {
       console.log(x, y, startingDragPoint)
@@ -49,45 +54,27 @@ function App() {
     <div className="App">
       <ParticlesBackground mainVisible={mainVisible} aboutMeVisible={aboutMeVisible}>
 
-        {/* Navbar */}
-        <Navbar bg="dark" variant="dark" style={{zIndex: 5}}>
-          <Container>
-            <Navbar.Brand href="#home">
-              <img
-                alt=""
-                src={Logo}
-                width="30"
-                height="30"
-                className="d-inline-block align-top"
-              />{' '}
-            React Bootstrap
-          </Navbar.Brand>
-          </Container>
-        </Navbar>
-
-
-
         <AnimatePresence>
             {mainVisible && (
-              <Container fluid>
+              <Section>
                <motion.div
                   initial={mainTransition}
                   animate={mainTransitionAnimate}
                   transition={{ duration: 1 }}
                   exit={mainExitTransition}
                 >
-                  <Container className="mainPageContainer">
-                    <Row>
-                      <Col>
+                  <Section>
+                    <Row className="valign-wrapper center-align container">
+                      <Col s={12}>
                         <h2>About Me</h2>
                       </Col>
                     </Row>
                     <br></br><br></br><br></br><br></br>
-                    <Row className="align-horizontally">
-                      <Col>
+                    <Row className="valign-wrapper center-align container">
+                      <Col s={4}>
                         <h2>Skills and Tools</h2>
                       </Col>
-                      <Col>
+                      <Col s={4}>
                         <motion.div>
                           <motion.div
                             drag
@@ -105,19 +92,19 @@ function App() {
                           </motion.div>
                         </motion.div>
                       </Col>
-                      <Col>
+                      <Col s={4}>
                         <h2>My Projects</h2>
                       </Col>
                     </Row>
                     <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
-                    <Row>
+                    <Row className="valign-wrapper center-align container">
                       <Col>
                         <h2>Contact</h2>
                       </Col>
                     </Row>
-                  </Container>
+                  </Section>
                 </motion.div>
-              </Container>  
+              </Section>  
             )}  
           </AnimatePresence>   
 

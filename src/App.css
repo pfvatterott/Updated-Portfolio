@@ -2,16 +2,3 @@
   height: 100px;
   opacity: 1;
 }
-
-.mainPageContainer {
-  position: absolute; /* or absolute */
-  bottom: 50%;
-  top: 50%;
-  left: 45%;
-}
-
-.align-horizontally {
-  position:fixed;
-  right: 35%
-}
-
