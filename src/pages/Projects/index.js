@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Row, Col, Container, Button} from 'react-materialize';
 import bestSnowScreenshot from "../../images/bestsnowscreenshot.png"
 import "./style.css"
 
