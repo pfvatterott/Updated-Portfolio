@@ -1,6 +1,7 @@
 import React from 'react'
-import { Row, Col, Container, Button} from 'react-materialize';
+import { Parallax, Row, Col, Section, Icon} from 'react-materialize';
 import profilePic from "../../images/profile-picture.jpg"
+import Icons from "../../components/Icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
 import { faGithub, faLinkedinIn, faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
@@ -24,76 +25,32 @@ export default function AboutMe(props) {
 
     return (
 
-        <Container className="aboutMeContainer">
-            <Row>
-                <Col>
-                    <img className="rounded-circle profilePic" src={profilePic}></img>
-                </Col>
-                <Col>
-                    <br></br>
-                    <h2>Paul Vatterott</h2>
-                    <h3>Full Stack Web Developer</h3>
-                    <br></br>
-                    <p>Based out of Salt Lake City, UT and recent graduate the University of Utah Web Development Bootcamp.</p>
-                    <span>
-                        <a href={"https://github.com/pfvatterott"} target="_blank">
-                            <Button
-                                className="contact-icons"
-                            >
-                                <FontAwesomeIcon icon={faGithub} />
-                            </Button>
-                        </a>
-                        <a href={"https://www.linkedin.com/in/paul-vatterott/"} target="_blank">
-                            <Button
-                                className="contact-icons"
-                            >
-                                <FontAwesomeIcon icon={faLinkedinIn} />
-                            </Button>
-                        </a>
-                        <a href={"https://www.instagram.com/pppaaaauuuullllll/"} target="_blank">
-                            <Button
-                                className="contact-icons"
-                            >
-                                <FontAwesomeIcon icon={faInstagram} />
-                            </Button>
-                        </a>
-                        <a href={"https://www.facebook.com/paul.vatterott/"} target="_blank">
-                            <Button
-                                className="contact-icons"
-                            >
-                                <FontAwesomeIcon icon={faFacebook} />
-                            </Button>
-                        </a>
-                        <a href={"mailto:pfvatterott@gmail.com"} target="_blank">
-                            <Button
-                                className="contact-icons"
-                            >
-                                <FontAwesomeIcon icon={faEnvelope} />
-                            </Button>
-                        </a>
-                    </span>
-                </Col>
-                <Col>
-                    <motion.div>
-                        <motion.div
-                            drag
-                            dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }}
-                            style={{ x }}
-                            onDragStart={
-                            (event, info) => startingDragPoint = { x: info.point.x, y: info.point.y }
-                            }
-                            onDragEnd={
-                            (event, info) => processDragInfo(info.point.x, info.point.y)
-                            }
-                        >
-                            <img className="dragItem" draggable="false" src="./images/clipart1869989.png"></img>
-                         </motion.div>
-                         <br></br><br></br><br></br><br></br><br></br><br></br>
-                         <h3>Back To Main</h3>
-                    </motion.div>
-                </Col>
+        <Section>
+            <Row className="container">
+            <Col s={12} m={6} className="center-align">
+                <div>
+                <br></br>
+                <img class="circle main-profile-pic z-depth-3 hoverable scrollspy" id="Contact"
+                    src={profilePic} alt="Paul Vatterott profile picture"/>
+                <br></br>
+                </div>
+            </Col>
+            <Col s={12} m={6} className="left-align">
+            <div >
+            <h2 class="header left-align">Paul Vatterott</h2>
+            <h4 class="grey-text text-darken-3 lighten-3 left-align">Full-Stack Web Developer</h4>
+            <p class="grey-text text-darken-3 lighten-3 left-align">Based out of Salt Lake City, Utah and
+            employed at the Rustler
+            Lodge in Alta. Currently in the University of Utah's Fullstack Web Development Bootcamp.</p>
+            <br></br>
+        </div>
+                <Icons href="https://github.com/pfvatterott" iconName="fab fa-github tooltipped contact-icons" tooltip="working" tooltipOptions={{position: 'top'}}/>
+                <Icons href="https://www.linkedin.com/in/paul-vatterott/" iconName="fab fa-linkedin-in tooltipped contact-icons"/>
+                <Icons href="https://www.instagram.com/pppaaaauuuullllll/" iconName="fab fa-instagram tooltipped contact-icons"/>
+                <Icons href="https://www.facebook.com/paul.vatterott/" iconName="fab fa-facebook tooltipped contact-icons"/>
+                <Icons href="mailto:pfvatterott@gmail.com" iconName="far fa-envelope tooltipped contact-icons"/>
+            </Col>
             </Row>
-          
-        </Container>
+        </Section>
     )
 }

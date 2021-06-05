@@ -21,24 +21,25 @@ function App() {
   const [ mainTransition, setMainTransition ] = useState({y: -100, x: 0})
   const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: h/4})
   const [ mainExitTransition, setMainExitTransition ] = useState({})
+  const [ prepAboutMe, setPrepAboutMe ] = useState(false)
+  const [ prepSkills, setPrepSkills ] = useState(false)
   
   console.log(h)
 
   function processDragInfo(x, y) {
       console.log(x, y, startingDragPoint)
       if ((startingDragPoint.y / 2) > y) {
-    
+          setPrepAboutMe(true)
           setMainExitTransition({y: 1000})
-          setAboutMeVisible(true)
           setMainVisible(false)
           setMainTransition({y: 1000 })
           setMainTransitionAnimate({ y: 300 })
 
       }
       else if ((startingDragPoint.x / 2) > x) {
+        setPrepSkills(true)
         setMainExitTransition({x: 1000})
-        setMainTransition({x: 1000, y: 300})
-        setSkillsVisible(true)
+        setMainTransition({x: 1000, y: 300})  
         setMainVisible(false)
         setMainTransitionAnimate({ x: -100 })
       }
@@ -50,11 +51,20 @@ function App() {
         setMainTransitionAnimate({ x: 100 })
       }
   }
+
+  function processElementExit() {
+    if (prepAboutMe === true) {
+      setAboutMeVisible(true)
+    }
+    else if (prepSkills === true) {
+      setSkillsVisible(true)
+    }
+  }
   return (
     <div className="App">
       <ParticlesBackground mainVisible={mainVisible} aboutMeVisible={aboutMeVisible}>
 
-        <AnimatePresence>
+        <AnimatePresence onExitComplete={() => {processElementExit()}}>
             {mainVisible && (
               <Section>
                <motion.div
@@ -69,7 +79,7 @@ function App() {
                         <h2>About Me</h2>
                       </Col>
                     </Row>
-                    <br></br><br></br><br></br><br></br>
+                    
                     <Row className="valign-wrapper center-align container">
                       <Col s={4}>
                         <h2>Skills and Tools</h2>
@@ -96,7 +106,7 @@ function App() {
                         <h2>My Projects</h2>
                       </Col>
                     </Row>
-                    <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+                    
                     <Row className="valign-wrapper center-align container">
                       <Col>
                         <h2>Contact</h2>
@@ -109,39 +119,39 @@ function App() {
           </AnimatePresence>   
 
         {/* about me section */}
-        <AnimatePresence>
+        <AnimatePresence exitBeforeEnter>
             {aboutMeVisible && (
-              <Container fluid>
+              <div>
                 <motion.div
-                  initial={{ y: -1000 }}
-                  animate={{ y: 300 }}
+                  initial={{ y: -200 }}
+                  animate={{ y: h/4 }}
                   transition={{ duration: 1 }}
                   exit={{ y: -1000}}
                 >
                   <AboutMe setAboutMeVisible={setAboutMeVisible} setMainVisible={setMainVisible}/>
                 </motion.div>
-              </Container>  
+              </div>  
             )}  
         </AnimatePresence>
 
         <AnimatePresence>
             {skillsVisible && (
-              <Container fluid>
+              <div>
                 <motion.div
                   initial={{ x: -1000 }}
-                  animate={{ x: 300 }}
+                  animate={{ x: w/50 }}
                   transition={{ duration: 1 }}
                   exit={{ x: -1000}}
                 >
                   <SkillsTools setMainVisible={setMainVisible} setSkillsVisible={setSkillsVisible}/>
                 </motion.div>
-              </Container>  
+              </div>  
             )}  
         </AnimatePresence>  
 
         <AnimatePresence>
             {projectsVisible && (
-              <Container fluid>
+              <div>
                 <motion.div
                   initial={{ x: 1000 }}
                   animate={{ x: -300 }}
@@ -150,7 +160,7 @@ function App() {
                 >
                   <Projects setMainVisible={setMainVisible} setProjectsVisible={setProjectsVisible}/>
                 </motion.div>
-              </Container>  
+              </div>  
             )}  
         </AnimatePresence>          
 

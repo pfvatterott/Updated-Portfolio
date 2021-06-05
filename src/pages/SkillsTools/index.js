@@ -22,7 +22,7 @@ export default function SkillsTools(props) {
     return (
         <Section>
             <Row className="container valign-wrapper">
-                <Col s={12} m={6} className="left-align">
+                <Col s={12} m={6} className="left-align" style={{paddingRight:"50px"}}>
                     <h3 class="header grey-text text-darken-3 lighten-3 left-align" data-aos="fade-right">Languages and Skills</h3>
                     <p class="grey-text text-darken-3 lighten-3 left-align" data-aos="fade-right">
                         <br/>
@@ -88,8 +88,8 @@ export default function SkillsTools(props) {
                         tooltip="ReactJS"
                     />
                 </Col>
-                <Col s={12} m={1}></Col>    
-                <Col s={12} m={5}>
+                   
+                <Col s={12} m={6}>
                     <Resume/>
                 </Col>
             </Row>
