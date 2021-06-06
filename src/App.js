@@ -81,13 +81,19 @@ function App() {
                   <Section>
                     <Row className="valign-wrapper center-align container">
                       <Col s={12}>
-                        <h2>About Me</h2>
+                        <h4>About Me</h4>
+                        
+                        <i class="fas fa-chevron-up"></i>
+                        
                       </Col>
                     </Row>
                     
                     <Row className="valign-wrapper center-align container">
-                      <Col s={4}>
-                        <h2>Skills and Tools</h2>
+                      <Col s={3}>
+                        <h4>Skills and Tools</h4>
+                      </Col>
+                      <Col s={1}>
+                      <i class="fas fa-chevron-left"></i>
                       </Col>
                       <Col s={4}>
                         <motion.div>
@@ -102,19 +108,23 @@ function App() {
                               (event, info) => processDragInfo(info.point.x, info.point.y)
                             }
                           >
-                            <img className="dragItem" draggable="false" src="./images/clipart1869989.png"></img>
+                            <motion.img whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="dragItem" draggable="false" src="./images/clipart1869989.png"></motion.img>
                             {/* </motion.div> */}
                           </motion.div>
                         </motion.div>
                       </Col>
-                      <Col s={4}>
-                        <h2>My Projects</h2>
+                      <Col s={1}>
+                        <i class="fas fa-chevron-right"></i>
+                      </Col>
+                      <Col s={3}>
+                        <h4>My Projects</h4>
                       </Col>
                     </Row>
                     
                     <Row className="valign-wrapper center-align container">
                       <Col>
-                        <h2>Contact</h2>
+                        <i class="fas fa-chevron-down"></i>
+                        <h4>Contact</h4>
                       </Col>
                     </Row>
                   </Section>

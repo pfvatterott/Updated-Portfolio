@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDatabase } from "@fortawesome/free-solid-svg-icons"
 import { faHtml5, faCss3, faWindows, faJsSquare, faNodeJs, faReact } from "@fortawesome/free-brands-svg-icons";
 import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion"
+import ReactTooltip from 'react-tooltip';
 import "./style.css"
 
 export default function SkillsTools(props) {
@@ -36,55 +37,41 @@ export default function SkillsTools(props) {
                         developer. Until then, please reach out if you'd like to talk or collaborate!
                     </p>
                     <br/>
-                    <Button
-                        floating
-                        className="fab fa-html5 languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="HTML5"
-                    />
-                     <Button
-                        floating
-                        className="fab fa-css3 languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="CSS3"
-                    />
-                     <Button
-                        floating
-                        className="fab fa-windows languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="Visual Studio Code"
-                    />
-                     <Button
-                        floating
-                        className="fab fa-js-square languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="JavaScript"
-                    />
-                     <Button
-                        floating
-                        className="fab fa-node-js languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="NodeJS"
-                    />
-                     <Button
-                        floating
-                        className="fas fa-database languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="MySql and NoSql"
-                    />
-                    <Button
-                        floating
-                        className="fab fa-react languageIcons z-depth-4"
-                        large
-                        node="button"
-                        tooltip="ReactJS"
-                    />
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="HTML5"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fab fa-html5 tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="CSS3"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fab fa-css3 tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="Visual Studio Code"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fab fa-windows tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="JavaScript"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fab fa-js-square tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="NodeJS"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fab fa-node-js tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="MySql and NoSql"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fas fa-database  tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
+                    <a href="https://github.com/pfvatterott" target="_blank" data-tip="ReactJS"
+                        class="hoverable btn-floating btn-large languageIcons z-depth-4" data-aos="flip-left">
+                        <i class="fab fa-react  tooltipped"></i>
+                        <ReactTooltip place="bottom" type="dark" effect="solid"/>
+                    </a>
                 </Col>
                    
                 <Col s={12} m={6}>
