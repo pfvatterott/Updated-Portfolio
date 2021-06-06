@@ -1,11 +1,9 @@
 import React from 'react'
-import { Parallax, Row, Col, Section, Icon} from 'react-materialize';
+import { Row, Col, Section } from 'react-materialize';
 import profilePic from "../../images/profile-picture.jpg"
 import Icons from "../../components/Icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons"
-import { faGithub, faLinkedinIn, faInstagram, faFacebook } from "@fortawesome/free-brands-svg-icons";
-import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-motion"
+import { motion, useMotionValue } from "framer-motion"
+import ReactTooltip from 'react-tooltip';
 import "./style.css"
 
 export default function AboutMe(props) {
@@ -37,18 +35,41 @@ export default function AboutMe(props) {
             </Col>
             <Col s={12} m={5} className="left-align">
             <div >
-            <h2 class="header left-align">Paul Vatterott</h2>
-            <h4 class="grey-text text-darken-3 lighten-3 left-align">Full-Stack Web Developer</h4>
-            <p class="grey-text text-darken-3 lighten-3 left-align">Based out of Salt Lake City, Utah and
-            employed at the Rustler
-            Lodge in Alta. Currently in the University of Utah's Fullstack Web Development Bootcamp.</p>
-            <br></br>
-        </div>
-                <Icons href="https://github.com/pfvatterott" iconName="fab fa-github tooltipped contact-icons" tooltip="working" tooltipOptions={{position: 'top'}}/>
-                <Icons href="https://www.linkedin.com/in/paul-vatterott/" iconName="fab fa-linkedin-in tooltipped contact-icons"/>
-                <Icons href="https://www.instagram.com/pppaaaauuuullllll/" iconName="fab fa-instagram tooltipped contact-icons"/>
-                <Icons href="https://www.facebook.com/paul.vatterott/" iconName="fab fa-facebook tooltipped contact-icons"/>
-                <Icons href="mailto:pfvatterott@gmail.com" iconName="far fa-envelope tooltipped contact-icons"/>
+                <h2 class="header left-align">Paul Vatterott</h2>
+                <h4 class="grey-text text-darken-3 lighten-3 left-align">Full-Stack Web Developer</h4>
+                <p class="grey-text text-darken-3 lighten-3 left-align">Based out of Salt Lake City, Utah and
+                employed at the Rustler
+                Lodge in Alta. Currently in the University of Utah's Fullstack Web Development Bootcamp.</p>
+                <br></br>
+            </div>
+            <span style={{fontSize: "3em"}}>
+            <a href="https://github.com/pfvatterott" target="_blank" data-tip="Github"
+              class="hoverable btn-floating btn-large contact-icons z-depth-4" data-aos="flip-left">
+              <i class="fab fa-github tooltipped iconImage" data-tooltip="Github"></i>
+              <ReactTooltip place="bottom" type="dark" effect="solid"/>
+            </a>
+            <a href="https://www.linkedin.com/in/paul-vatterott/" target="_blank" data-tip="LinkedIn" style={{color: "#00bcd4"}}
+              class="hoverable btn-floating btn-large contact-icons z-depth-4" data-aos="flip-left">
+              <i class="fab fa-linkedin-in tooltipped iconImage" data-tooltip="LinkedIn"></i>
+              <ReactTooltip place="bottom" type="dark" effect="solid"/>
+            </a>
+            <a href="https://www.instagram.com/pppaaaauuuullllll/" target="_blank" data-tip="Instagram" style={{color: "#00bcd4"}}
+              class="hoverable btn-floating btn-large contact-icons z-depth-4" data-aos="flip-left">
+              <i class="fab fa-instagram tooltipped iconImage" data-tooltip="Instagram"></i>
+              <ReactTooltip place="bottom" type="dark" effect="solid"/>
+            </a>
+            <a href="https://www.facebook.com/paul.vatterott/" target="_blank" data-tip="Facebook" style={{color: "#00bcd4"}}
+              class="hoverable btn-floating btn-large contact-icons z-depth-4" data-aos="flip-left">
+              <i class="fab fa-facebook tooltipped iconImage" data-tooltip="Facebook"></i>
+              <ReactTooltip place="bottom" type="dark" effect="solid"/>
+            </a>
+            <a href="mailto:pfvatterott@gmail.com" target="_blank" data-tip="Email: pfvatterott@gmail.com" style={{color: "#00bcd4"}}
+              class="hoverable btn-floating btn-large contact-icons z-depth-4" data-aos="flip-left">
+              <i class="far fa-envelope tooltipped iconImage" data-tooltip="Email"></i>
+              <ReactTooltip place="bottom" type="dark" effect="solid"/>
+            </a>
+          </span>
+            
             </Col>
             <Col s={12} m={2}>
             <motion.div>

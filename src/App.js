@@ -31,16 +31,16 @@ function App() {
       console.log(x, y, startingDragPoint)
       if ((startingDragPoint.y / 2) > y) {
           setPrepAboutMe(true)
-          setMainExitTransition({y: 1000})
+          setMainExitTransition({y: h})
           setMainVisible(false)
-          setMainTransition({y: 1000 })
+          setMainTransition({y: h })
           setMainTransitionAnimate({ y: h/4 })
 
       }
       else if ((startingDragPoint.x / 2) > x) {
         setPrepSkills(true)
         setMainExitTransition({x: w})
-        setMainTransition({x: 1000, y: h/4})  
+        setMainTransition({x: w, y: h/4})  
         setMainVisible(false)
         setMainTransitionAnimate({ x: 0 })
       }
@@ -128,10 +128,10 @@ function App() {
             {aboutMeVisible && (
               <div>
                 <motion.div
-                  initial={{ y: -200 }}
+                  initial={{ y: -h }}
                   animate={{ y: h/4 }}
                   transition={{ duration: 1 }}
-                  exit={{ y: -1000}}
+                  exit={{ y: -h}}
                 >
                   <AboutMe setAboutMeVisible={setAboutMeVisible} setMainVisible={setMainVisible} setPrepMainMenu={setPrepMainMenu}/>
                 </motion.div>
@@ -144,7 +144,7 @@ function App() {
             {skillsVisible && (
               <div>
                 <motion.div
-                  initial={{ x: -1000, y: h/6 }}
+                  initial={{ x: -w, y: h/6 }}
                   animate={{ x: 0 }}
                   transition={{ duration: 1 }}
                   exit={{ x: -w}}
@@ -155,6 +155,7 @@ function App() {
             )}  
         </AnimatePresence>  
 
+        {/* Projects Section */}
         <AnimatePresence>
             {projectsVisible && (
               <div>
