@@ -5,18 +5,15 @@ import "./style.css"
 export default function ParticlesBackground(props) {
     const [particleColor, setParticleColor] = useState("#ff0000")
 
-    useEffect(() => {
-        console.log(props.mainVisible)
-        console.log(props.aboutMeVisible)
-
-        if (props.mainVisible === true) {
-            setParticleColor("#ff0000")
-        }
-        else if (props.aboutMeVisible === true) {
-            setParticleColor("#2f00ff")
-        }
+    // useEffect(() => {
+    //     if (props.mainVisible === true) {
+    //         setParticleColor("#ff0000")
+    //     }
+    //     else if (props.aboutMeVisible === true) {
+    //         setParticleColor("#2f00ff")
+    //     }
         
-    }, [props.mainVisible, props.aboutMeVisible])
+    // }, [props.mainVisible, props.aboutMeVisible])
     return (
         <div>
         <Particles

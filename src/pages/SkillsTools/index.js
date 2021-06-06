@@ -14,9 +14,7 @@ export default function SkillsTools(props) {
     function processDragInfo(x, y) {
         console.log(x, y, startingDragPoint)
         if ((startingDragPoint.x * 1.8) < x) {
-            console.log('working')
             props.setSkillsVisible(false)
-            props.setMainVisible(true)
         }
     }
     return (
@@ -91,6 +89,29 @@ export default function SkillsTools(props) {
                    
                 <Col s={12} m={6}>
                     <Resume/>
+                </Col>
+            </Row>
+            <Row className="container">
+                <Col s={8}>
+                    <motion.div>
+                        <motion.div
+                        drag
+                        dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }} 
+                        style={{ x }}
+                        onDragStart={
+                            (event, info) => startingDragPoint = { x: info.point.x, y: info.point.y }
+                        }
+                        onDragEnd={
+                            (event, info) => processDragInfo(info.point.x, info.point.y)
+                        }
+                        >
+                        <img className="dragItem" draggable="false" src="./images/clipart1869989.png"></img>
+                        {/* </motion.div> */}
+                        </motion.div>
+                    </motion.div>
+                </Col>
+                <Col s={4}>
+                    <h3>Back to Main</h3>
                 </Col>
             </Row>
         </Section>

@@ -23,6 +23,7 @@ function App() {
   const [ mainExitTransition, setMainExitTransition ] = useState({})
   const [ prepAboutMe, setPrepAboutMe ] = useState(false)
   const [ prepSkills, setPrepSkills ] = useState(false)
+  const [ prepMainMenu, setPrepMainMenu ] = useState(false)
   
   console.log(h)
 
@@ -33,15 +34,15 @@ function App() {
           setMainExitTransition({y: 1000})
           setMainVisible(false)
           setMainTransition({y: 1000 })
-          setMainTransitionAnimate({ y: 300 })
+          setMainTransitionAnimate({ y: h/4 })
 
       }
       else if ((startingDragPoint.x / 2) > x) {
         setPrepSkills(true)
-        setMainExitTransition({x: 1000})
-        setMainTransition({x: 1000, y: 300})  
+        setMainExitTransition({x: w})
+        setMainTransition({x: 1000, y: h/4})  
         setMainVisible(false)
-        setMainTransitionAnimate({ x: -100 })
+        setMainTransitionAnimate({ x: 0 })
       }
       else if ((startingDragPoint.x * 1.5) < x) {
         setMainExitTransition({x: -1000})
@@ -53,13 +54,17 @@ function App() {
   }
 
   function processElementExit() {
+    console.log(prepMainMenu)
     if (prepAboutMe === true) {
       setAboutMeVisible(true)
+      setPrepAboutMe(false)
     }
     else if (prepSkills === true) {
       setSkillsVisible(true)
+      setPrepSkills(false)
     }
   }
+
   return (
     <div className="App">
       <ParticlesBackground mainVisible={mainVisible} aboutMeVisible={aboutMeVisible}>
@@ -119,7 +124,7 @@ function App() {
           </AnimatePresence>   
 
         {/* about me section */}
-        <AnimatePresence exitBeforeEnter>
+        <AnimatePresence onExitComplete={() => {setMainVisible(true)}}>
             {aboutMeVisible && (
               <div>
                 <motion.div
@@ -128,20 +133,21 @@ function App() {
                   transition={{ duration: 1 }}
                   exit={{ y: -1000}}
                 >
-                  <AboutMe setAboutMeVisible={setAboutMeVisible} setMainVisible={setMainVisible}/>
+                  <AboutMe setAboutMeVisible={setAboutMeVisible} setMainVisible={setMainVisible} setPrepMainMenu={setPrepMainMenu}/>
                 </motion.div>
               </div>  
             )}  
         </AnimatePresence>
 
-        <AnimatePresence>
+        {/* Skills Section */}
+        <AnimatePresence onExitComplete={() => {setMainVisible(true)}}>
             {skillsVisible && (
               <div>
                 <motion.div
-                  initial={{ x: -1000 }}
-                  animate={{ x: w/50 }}
+                  initial={{ x: -1000, y: h/6 }}
+                  animate={{ x: 0 }}
                   transition={{ duration: 1 }}
-                  exit={{ x: -1000}}
+                  exit={{ x: -w}}
                 >
                   <SkillsTools setMainVisible={setMainVisible} setSkillsVisible={setSkillsVisible}/>
                 </motion.div>

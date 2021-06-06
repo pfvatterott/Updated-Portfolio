@@ -18,7 +18,7 @@ export default function AboutMe(props) {
         if ((startingDragPoint.y * 1.8) < y) {
             console.log('working')
             props.setAboutMeVisible(false)
-            props.setMainVisible(true)
+            props.setPrepMainMenu(true)
         }
     }
 
@@ -27,7 +27,7 @@ export default function AboutMe(props) {
 
         <Section>
             <Row className="container">
-            <Col s={12} m={6} className="center-align">
+            <Col s={12} m={5} className="center-align">
                 <div>
                 <br></br>
                 <img class="circle main-profile-pic z-depth-3 hoverable scrollspy" id="Contact"
@@ -35,7 +35,7 @@ export default function AboutMe(props) {
                 <br></br>
                 </div>
             </Col>
-            <Col s={12} m={6} className="left-align">
+            <Col s={12} m={5} className="left-align">
             <div >
             <h2 class="header left-align">Paul Vatterott</h2>
             <h4 class="grey-text text-darken-3 lighten-3 left-align">Full-Stack Web Developer</h4>
@@ -49,6 +49,24 @@ export default function AboutMe(props) {
                 <Icons href="https://www.instagram.com/pppaaaauuuullllll/" iconName="fab fa-instagram tooltipped contact-icons"/>
                 <Icons href="https://www.facebook.com/paul.vatterott/" iconName="fab fa-facebook tooltipped contact-icons"/>
                 <Icons href="mailto:pfvatterott@gmail.com" iconName="far fa-envelope tooltipped contact-icons"/>
+            </Col>
+            <Col s={12} m={2}>
+            <motion.div>
+                <motion.div
+                drag
+                dragConstraints={{ top: 0, left: 0, right: 0, bottom: 0 }} 
+                style={{ x }}
+                onDragStart={
+                    (event, info) => startingDragPoint = { x: info.point.x, y: info.point.y }
+                }
+                onDragEnd={
+                    (event, info) => processDragInfo(info.point.x, info.point.y)
+                }
+                >
+                <img className="dragItem" draggable="false" src="./images/clipart1869989.png"></img>
+                {/* </motion.div> */}
+                </motion.div>
+            </motion.div>
             </Col>
             </Row>
         </Section>
