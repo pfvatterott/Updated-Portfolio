@@ -1,0 +1,23 @@
+.aboutMeContainer{
+    position: absolute; /* or absolute */
+    top: 40%;
+    left: 20%;
+}
+
+.main-profile-pic {
+    height: 300px;
+}
+
+.contact-icons {
+    background-color: #00bcd4;
+}
+
+.contact-icons:hover {
+    background-color: #2E3639;
+}
+
+.iconImage {
+    position: relative;
+    top: -10px;
+    right: 9px
+}

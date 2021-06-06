@@ -1,0 +1,53 @@
+.languageIcons {
+    background-color: #00bcd4 !important;
+    margin-right: 5px;
+}
+
+.languageIcons:hover {
+    background-color: #2E3639 !important;
+}
+
+.text-section {
+    margin-left: 80px !important;
+    float: left !important;
+}
+
+.best-snow-small {
+    border-radius: 10px !important;
+}
+
+.best-snow-border-small {
+    border-radius: 25px !important;
+    background-image: linear-gradient(to right, #002E57, #188BF0);
+}
+
+.line1-mobile {
+    border-bottom: 6px solid #2E3639;
+    height: 50px;
+    border-radius: 1px;
+}
+
+.note-border-small {
+    border-radius: 25px !important;
+    background-image: linear-gradient(to right, #027D9C, #02BAE8);
+}
+
+.team-border-small {
+    border-radius: 25px !important;
+    background-image: linear-gradient(to right, #C45A60, #C49598);
+}
+
+.team-generator-border-small {
+    border-radius: 25px !important;
+    background-image: linear-gradient(to right, #007A8A, #00BFD7);
+}
+
+.workoutTracker-border-small {
+    border-radius: 25px !important;
+    background-image: linear-gradient(to right, #2A5BB0, #70A5FF)
+}
+
+.noteTaker-border-small {
+    border-radius: 25px !important;
+    background-image: linear-gradient(to right, #07705B, #3BFFD8)
+}
