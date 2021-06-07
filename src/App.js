@@ -77,7 +77,7 @@ function App() {
                <motion.div
                   initial={mainTransition}
                   animate={mainTransitionAnimate}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 1.5, type: 'spring', bounce: .4 }}
                   exit={mainExitTransition}
                 >
                   
@@ -111,7 +111,7 @@ function App() {
                               (event, info) => processDragInfo(info.point.x, info.point.y)
                             }
                           >
-                            <motion.img animate={{rotate: [0, 0, 270, 270, 0]}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2, repeatDelay: 4}}
+                            <motion.img animate={{rotate: [0, 0, 360, 0]}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2, repeatDelay: 4}}
                             whileTap={{rotate: 0}} className="dragItem" draggable="false" src={square}></motion.img>
                             {/* </motion.div> */}
                           </motion.div>
@@ -145,7 +145,7 @@ function App() {
                 <motion.div
                   initial={{ y: -h }}
                   animate={{ y: h/4 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 1.5, type: 'spring', bounce: .4 }}
                   exit={{ y: -h}}
                 >
                   <AboutMe setAboutMeVisible={setAboutMeVisible} setMainVisible={setMainVisible} setPrepMainMenu={setPrepMainMenu}/>
@@ -161,7 +161,7 @@ function App() {
                 <motion.div
                   initial={{ x: -w, y: h/6 }}
                   animate={{ x: 0 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 1.5, type: 'spring', bounce: .4}}
                   exit={{ x: -w}}
                 >
                   <SkillsTools setMainVisible={setMainVisible} setSkillsVisible={setSkillsVisible}/>
@@ -177,7 +177,7 @@ function App() {
                 <motion.div
                   initial={{ x: 1000 }}
                   animate={{ x: -300 }}
-                  transition={{ duration: 1 }}
+                  transition={{ duration: 1.5, type: 'spring', bounce: .4 }}
                   exit={{ x: 1000}}
                 >
                   <Projects setMainVisible={setMainVisible} setProjectsVisible={setProjectsVisible}/>
