@@ -2,7 +2,7 @@
   "name": "updatedportfolio",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://pfvatterott.github.io/Updated-Portfolio",
+  "homepage": "http://paul-vatterott.com/Updated-Portfolio/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
