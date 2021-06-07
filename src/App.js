@@ -21,7 +21,7 @@ function App() {
   const [ skillsVisible, setSkillsVisible ] = useState(false)
   const [ projectsVisible, setProjectsVisible ] = useState(false)
   const [ mainTransition, setMainTransition ] = useState({y: -h, x: 0})
-  const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: h/4})
+  const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: h/10})
   const [ mainExitTransition, setMainExitTransition ] = useState({})
   const [ prepAboutMe, setPrepAboutMe ] = useState(false)
   const [ prepSkills, setPrepSkills ] = useState(false)
@@ -36,13 +36,13 @@ function App() {
           setMainExitTransition({y: h})
           setMainVisible(false)
           setMainTransition({y: h })
-          setMainTransitionAnimate({ y: h/4 })
+          setMainTransitionAnimate({ y: h/10 })
 
       }
       else if ((startingDragPoint.x / 2) > x) {
         setPrepSkills(true)
         setMainExitTransition({x: w})
-        setMainTransition({x: w, y: h/4})  
+        setMainTransition({x: w, y: h/10})  
         setMainVisible(false)
         setMainTransitionAnimate({ x: 0 })
       }
@@ -80,7 +80,13 @@ function App() {
                   transition={{ duration: 1.5, type: 'spring', bounce: .4 }}
                   exit={mainExitTransition}
                 >
-                  
+                    <Row className="valign-wrapper center-align container">
+                      <Col s={5}>
+                        <h1>Hi, I'm Paul</h1>
+                      </Col>
+                      <Col s={7}></Col>
+                    </Row>
+                    <br></br>
                     <Row className="valign-wrapper center-align container">
                       <Col s={12}>
                         <h1 className="flow-text">About Me</h1>
@@ -132,7 +138,7 @@ function App() {
                         <h4 className="flow-text">Contact</h4>
                       </Col>
                     </Row>
-                  
+                    
                 </motion.div>
               </Section>  
             )}  
