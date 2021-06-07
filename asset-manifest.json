@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/Updated-Portfolio/static/css/main.1dde7a0e.chunk.css",
+    "main.js": "/Updated-Portfolio/static/js/main.5adc5cdd.chunk.js",
+    "main.js.map": "/Updated-Portfolio/static/js/main.5adc5cdd.chunk.js.map",
+    "runtime-main.js": "/Updated-Portfolio/static/js/runtime-main.7b53420c.js",
+    "runtime-main.js.map": "/Updated-Portfolio/static/js/runtime-main.7b53420c.js.map",
+    "static/css/2.61f5e8b5.chunk.css": "/Updated-Portfolio/static/css/2.61f5e8b5.chunk.css",
+    "static/js/2.57d7ea54.chunk.js": "/Updated-Portfolio/static/js/2.57d7ea54.chunk.js",
+    "static/js/2.57d7ea54.chunk.js.map": "/Updated-Portfolio/static/js/2.57d7ea54.chunk.js.map",
+    "index.html": "/Updated-Portfolio/index.html",
+    "static/css/2.61f5e8b5.chunk.css.map": "/Updated-Portfolio/static/css/2.61f5e8b5.chunk.css.map",
+    "static/css/main.1dde7a0e.chunk.css.map": "/Updated-Portfolio/static/css/main.1dde7a0e.chunk.css.map",
+    "static/js/2.57d7ea54.chunk.js.LICENSE.txt": "/Updated-Portfolio/static/js/2.57d7ea54.chunk.js.LICENSE.txt",
+    "static/media/Paul Vatterott Resume.d1650bf4.pdf": "/Updated-Portfolio/static/media/Paul Vatterott Resume.d1650bf4.pdf",
+    "static/media/bestsnowscreenshot.728b655b.png": "/Updated-Portfolio/static/media/bestsnowscreenshot.728b655b.png",
+    "static/media/material-icons.css": "/Updated-Portfolio/static/media/material-icons.d72aa1b5.woff2",
+    "static/media/profile-picture.9dfedb08.jpg": "/Updated-Portfolio/static/media/profile-picture.9dfedb08.jpg",
+    "static/media/resume-screenshot.0857f8f8.png": "/Updated-Portfolio/static/media/resume-screenshot.0857f8f8.png",
+    "static/media/square.74be8730.svg": "/Updated-Portfolio/static/media/square.74be8730.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7b53420c.js",
+    "static/css/2.61f5e8b5.chunk.css",
+    "static/js/2.57d7ea54.chunk.js",
+    "static/css/main.1dde7a0e.chunk.css",
+    "static/js/main.5adc5cdd.chunk.js"
+  ]
+}
