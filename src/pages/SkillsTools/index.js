@@ -22,19 +22,14 @@ export default function SkillsTools(props) {
         <Section>
             <Row className="container valign-wrapper">
                 <Col s={12} m={6} className="left-align" style={{paddingRight:"50px"}}>
-                    <h3 class="header grey-text text-darken-3 lighten-3 left-align" data-aos="fade-right">Languages and Skills</h3>
+                    <h3 class="header grey-text text-darken-3 lighten-3 left-align" data-aos="fade-right">Skills and Tools</h3>
                     <p class="grey-text text-darken-3 lighten-3 left-align" data-aos="fade-right">
                         <br/>
-                        Since starting the University of Utah Web Development Program I have gone all in to hone my skills to be
-                        ready for the job market. My natural curiosity paired with a strong work ethic means I am always looking to
-                        improve my skills.
+                        Full Stack Web Developer Bootcamp graduate with a passion for problem solving, working with others, learning, and making products I’m proud of. My natural curiosity paired with a strong work ethic means I am always looking to improve my skills.
                         <br/><br/>
-                        Through past experiences leading countless outdoors expeditions I have acquired the ability to work with and
-                        manage teams of varying sizes. I naturally like to take the reins to solve problems while also feeling
-                        content to step back and learn from others.
+                        Through past experiences leading countless outdoors expeditions I have acquired the ability to work with and manage teams of varying sizes. I naturally like to take the reins to solve problems while also feeling content to step back and learn from others.
                         <br/><br/>
-                        Once I earn my certificate from the University of Utah I will be joining the job search as a full-stack web
-                        developer. Until then, please reach out if you'd like to talk or collaborate!
+                        I am currently looking for new employment! An ideal job would be challenging and provide ways to improve my Web Development skills. If you are a recruiter or someone looking to collaborate please reach out!
                     </p>
                     <br/>
                     <a href="https://github.com/pfvatterott" target="_blank" data-tip="HTML5"

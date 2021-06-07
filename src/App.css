@@ -1,4 +1,13 @@
 .dragItem {
   height: 100px;
   opacity: 1;
+  cursor: pointer;
+}
+
+.dragItem:active {
+  cursor:grabbing
+}
+
+.mainSection {
+  width: 100% !important;
 }

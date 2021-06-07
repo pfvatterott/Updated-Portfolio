@@ -33,13 +33,11 @@ export default function AboutMe(props) {
                 <br></br>
                 </div>
             </Col>
-            <Col s={12} m={5} className="left-align">
+            <Col s={12} m={6} className="left-align">
             <div >
                 <h2 class="header left-align">Paul Vatterott</h2>
                 <h4 class="grey-text text-darken-3 lighten-3 left-align">Full-Stack Web Developer</h4>
-                <p class="grey-text text-darken-3 lighten-3 left-align">Based out of Salt Lake City, Utah and
-                employed at the Rustler
-                Lodge in Alta. Currently in the University of Utah's Fullstack Web Development Bootcamp.</p>
+                <p class="grey-text text-darken-3 lighten-3 left-align">Based out of Salt Lake City, UT and recent graduate the University of Utah Web Development Bootcamp.</p>
                 <br></br>
             </div>
             <span style={{fontSize: "3em"}}>
@@ -71,7 +69,8 @@ export default function AboutMe(props) {
           </span>
             
             </Col>
-            <Col s={12} m={2}>
+            <Col s={1} m={1}>
+              <br></br> <br></br>
             <motion.div>
                 <motion.div
                 drag
@@ -85,7 +84,6 @@ export default function AboutMe(props) {
                 }
                 >
                 <img className="dragItem" draggable="false" src="./images/clipart1869989.png"></img>
-                {/* </motion.div> */}
                 </motion.div>
             </motion.div>
             </Col>

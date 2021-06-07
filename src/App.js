@@ -7,7 +7,9 @@ import { motion, useMotionValue, useTransform, AnimatePresence } from "framer-mo
 import AboutMe from "./pages/AboutMe"
 import SkillsTools from "./pages/SkillsTools"
 import Projects from "./pages/Projects"
+import square from "./images/square.svg"
 import 'materialize-css';
+import 'material-icons/iconfont/material-icons.css';
 
 function App() {
   var w = window.innerWidth;
@@ -18,7 +20,7 @@ function App() {
   const [ aboutMeVisible, setAboutMeVisible ] = useState(false)
   const [ skillsVisible, setSkillsVisible ] = useState(false)
   const [ projectsVisible, setProjectsVisible ] = useState(false)
-  const [ mainTransition, setMainTransition ] = useState({y: -100, x: 0})
+  const [ mainTransition, setMainTransition ] = useState({y: -h, x: 0})
   const [ mainTransitionAnimate, setMainTransitionAnimate ] = useState({ y: h/4})
   const [ mainExitTransition, setMainExitTransition ] = useState({})
   const [ prepAboutMe, setPrepAboutMe ] = useState(false)
@@ -67,33 +69,33 @@ function App() {
 
   return (
     <div className="App">
+      
       <ParticlesBackground mainVisible={mainVisible} aboutMeVisible={aboutMeVisible}>
-
         <AnimatePresence onExitComplete={() => {processElementExit()}}>
             {mainVisible && (
-              <Section>
+              <Section className="mainSection">
                <motion.div
                   initial={mainTransition}
                   animate={mainTransitionAnimate}
                   transition={{ duration: 1 }}
                   exit={mainExitTransition}
                 >
-                  <Section>
+                  
                     <Row className="valign-wrapper center-align container">
                       <Col s={12}>
-                        <h4>About Me</h4>
-                        
-                        <i class="fas fa-chevron-up"></i>
+                        <h1 className="flow-text">About Me</h1>
+                        <motion.i initial={{opacity: 1}}animate={{opacity: 0}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2}}class="fas fa-chevron-up"></motion.i>
                         
                       </Col>
                     </Row>
-                    
-                    <Row className="valign-wrapper center-align container">
+                    <br></br>
+                    <Row className="valign-wrapper center-align container" style={{padding: "0"}}>
+                      <Col m={4}></Col>
                       <Col s={3}>
-                        <h4>Skills and Tools</h4>
+                        <h4 className="flow-text">Skills & Tools</h4>
                       </Col>
                       <Col s={1}>
-                      <i class="fas fa-chevron-left"></i>
+                      <motion.i initial={{opacity: 1}}animate={{opacity: 0}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2}}class="fas fa-chevron-left"></motion.i>
                       </Col>
                       <Col s={4}>
                         <motion.div>
@@ -103,31 +105,34 @@ function App() {
                             style={{ x }}
                             onDragStart={
                               (event, info) => startingDragPoint = { x: info.point.x, y: info.point.y }
+
                             }
                             onDragEnd={
                               (event, info) => processDragInfo(info.point.x, info.point.y)
                             }
                           >
-                            <motion.img whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} className="dragItem" draggable="false" src="./images/clipart1869989.png"></motion.img>
+                            <motion.img animate={{rotate: [0, 0, 270, 270, 0]}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2, repeatDelay: 4}}
+                            whileTap={{rotate: 0}} className="dragItem" draggable="false" src={square}></motion.img>
                             {/* </motion.div> */}
                           </motion.div>
                         </motion.div>
                       </Col>
                       <Col s={1}>
-                        <i class="fas fa-chevron-right"></i>
+                      <motion.i initial={{opacity: 1}}animate={{opacity: 0}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2}}class="fas fa-chevron-right"></motion.i>
                       </Col>
                       <Col s={3}>
-                        <h4>My Projects</h4>
+                        <h4 className="flow-text">Projects</h4>
                       </Col>
+                      <Col m={4}></Col>
                     </Row>
-                    
+                    <br></br>
                     <Row className="valign-wrapper center-align container">
                       <Col>
-                        <i class="fas fa-chevron-down"></i>
-                        <h4>Contact</h4>
+                      <motion.i initial={{opacity: 1}}animate={{opacity: 0}} transition={{duration: 3, repeat: Infinity, repeatType: "reverse", delay: 2}}class="fas fa-chevron-down"></motion.i>
+                        <h4 className="flow-text">Contact</h4>
                       </Col>
                     </Row>
-                  </Section>
+                  
                 </motion.div>
               </Section>  
             )}  
